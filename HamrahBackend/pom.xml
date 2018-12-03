@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pco.hamrah</groupId>
+	<artifactId>HamrahBackend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Hamrah Backend</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<gwtVersion>2.8.2</gwtVersion>
+
+		<smartgwt.build.date.p>20180331</smartgwt.build.date.p>
+		<smartgwt.build.date>2018-03-31</smartgwt.build.date>
+		<smartgwt.build.number>12.0</smartgwt.build.number>
+		<smartgwt.version>${smartgwt.build.number}-p${smartgwt.build.date.p}</smartgwt.version>
+
+		<!-- <smartgwt.version>12.0-p20180926</smartgwt.version> <smartgwt.build.date>2018-09-26</smartgwt.build.date> -->
+
+		<spring.boot.version>2.0.3.RELEASE</spring.boot.version>
+
+		<smack.version>4.1.9</smack.version>
+		<serverPort>8091</serverPort>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.isomorphic</groupId>
+					<artifactId>isc-maven-plugin</artifactId>
+					<version>1.2.1</version>
+					<configuration>
+						<buildNumber>${smartgwt.build.number}p</buildNumber>
+						<license>LGPL</license>
+						<buildDate>${smartgwt.build.date}</buildDate>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<modules>
+		<module>Server</module>
+		<module>Ui</module>
+	</modules>
+</project>
