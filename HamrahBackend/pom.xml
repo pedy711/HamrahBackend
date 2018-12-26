@@ -41,6 +41,13 @@
 						<license>LGPL</license>
 						<buildDate>${smartgwt.build.date}</buildDate>
 					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>install</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
