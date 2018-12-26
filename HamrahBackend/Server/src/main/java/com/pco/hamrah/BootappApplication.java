@@ -31,7 +31,7 @@ public class BootappApplication {
 			ArrayList<User> entities = new ArrayList<>();
 			if (userService.count() < 50) {
 				for (int i = 0; i < 50; i++) {
-					User person = new User("Pedram +" + i, "Khoshdani", 28);
+					User person = new User("شایان +" + i, "تالش", 28);
 					entities.add(person);
 				}
 				userService.saveAll(entities);
