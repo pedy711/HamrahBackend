@@ -30,27 +30,26 @@
 	</properties>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>com.isomorphic</groupId>
-					<artifactId>isc-maven-plugin</artifactId>
-					<version>1.2.1</version>
-					<configuration>
-						<buildNumber>${smartgwt.build.number}p</buildNumber>
-						<license>LGPL</license>
-						<buildDate>${smartgwt.build.date}</buildDate>
-					</configuration>
-					<executions>
-						<execution>
-							<goals>
-								<goal>install</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.isomorphic</groupId>
+				<artifactId>isc-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<buildNumber>${smartgwt.build.number}p</buildNumber>
+					<license>LGPL</license>
+					<buildDate>${smartgwt.build.date}</buildDate>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 	<modules>
 		<module>Server</module>
