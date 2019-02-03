@@ -1,10 +1,16 @@
 package com.pco.hamrah.common.model;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.jboss.aerogear.security.otp.api.Base32;
@@ -21,15 +27,28 @@ public class User {
     private String firstName;
 
     private String lastName;
-
+    
+    private Integer gender; // male = 1, female = 0
+    
     private String email;
-
+    
     @Column(length = 60)
     private String password;
-
+    
     private boolean enabled;
-     
+    
     private Integer age;
+    
+    @OneToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    private Location location;
+    
+    private Timestamp birthday;
+    
+    private String    summary;
+
+
+
+     
 
 //    private boolean isUsing2FA;
 
@@ -164,6 +183,38 @@ public class User {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+
+	public Integer getGender() {
+		return gender;
+	}
+
+	public void setGender(Integer gender) {
+		this.gender = gender;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Timestamp getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Timestamp birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
 	}
 
 }
